@@ -34,7 +34,7 @@ export default function PostPage({
 }
 
 export async function getStaticPaths() {
-  const posts = await axios.get('http://localhost:8000/baseruns')
+  const posts = await axios.get('https://calvarytempleke-api.onrender.com/baseruns')
   const paths = []
 
   await posts.data.map((post) => {
@@ -48,7 +48,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const post = await axios.get('http://localhost:8000/baserun?p=' + slug)
+  const post = await axios.get('https://calvarytempleke-api.onrender.com/baserun?p=' + slug)
 
   const { frontmatter, content } = post.data
   console.log(frontmatter)

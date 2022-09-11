@@ -20,7 +20,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = await axios.get('http://localhost:8000/baseruns')
+  const posts = await axios.get('https://calvarytempleke-api.onrender.com/baseruns')
   return {
     props: {
       posts: posts.data.sort(sortByDate),
